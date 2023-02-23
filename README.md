@@ -1,3 +1,19 @@
 # Life
 Life is a library for reinforce learning implemented by PyTorch.
 ![190503058512b5a059717be2719e6a1](https://user-images.githubusercontent.com/106570281/220634585-7f9375f2-599f-479c-bceb-f624f9932528.jpg)
+## 目前，Life库实现的算法有：
+- Sarsa
+- multi-Sarsa
+- Q-Learning
+- Dyna-Q
+- DQN
+- Double-DQN
+- Dueling-DQN
+- REINFORCE策略梯度
+- Actor-Critic
+- PPO
+- DDPG
+- SAC
+- BC
+- GAIL
+- CQL
