@@ -97,6 +97,16 @@ action_dim = env.action_space.n
 agent = DQN(state_dim, hidden_dim, action_dim, lr, gamma, epsilon,
             target_update, device)  # DQN模型
 ```
+注意，如果你足够细心，你会发现在上述建立DQN的过程中，我们没有传入一个Neural Network，这是因为在建立深度强化学习时，Life提供了一个默认的双层神经网络作为建立DQN的**默认神经网络**。当然，你也可以**使用自己设计的神经网络结构：**
+```python
+class YourNet:
+	"""your network for your task"""
+	pass
+
+
+agent = DQN(state_dim, hidden_dim, action_dim, lr, gamma, epsilon,
+            target_update, device, q_net=YourNet)  # DQN模型
+```
 ## 第三步，使用训练器训练模型
 ```python
 result=train_dqn(agent,env,replay_buffer,minimal_size,batch_size,num_episodes)
@@ -113,6 +123,10 @@ plt.show()
 ```
 得到：
 ![dqn_on_cartpole](https://user-images.githubusercontent.com/106570281/221387500-714d271b-51fa-43b5-9025-56dd4b5c76b7.png)
+## 当然，如果你需要智能体的话，也可以设置```return_agent=True```,这会返回一个元组```(return_list, agent)```
+其中，```return_list```为：训练过程中每个回合的汇报，```agent```为训练好的智能体。
+```return_agent```默认为```False```。
+
 **可见，除了超参数的设置之外，我们构建DQN算法只使用了两行代码：**
 ```python
 from life.dqn.dqn import DQN
