@@ -17,6 +17,31 @@ Life is a library for reinforce learning implemented by PyTorch.
 - BC
 - GAIL
 - CQL
+# 安装(install)
+```bash
+pip install rllife
+```
+## 或者
+你可以在[PyPI](https://pypi.org/project/rllife/#files)上面下载.gz文件，然后通过本地安装。
+# requirement
+```bash
+pyyaml==6.0
+ipykernel==6.15.1
+jupyter==1.0.0
+matplotlib==3.5.3
+seaborn==0.12.1
+dill==0.3.5.1
+argparse==1.4.0
+pandas==1.3.5
+pyglet==1.5.26
+importlib-metadata<5.0
+setuptools==65.2.0
+gym==0.25.2
+numpy==1.21.6
+pandas==1.3.4
+torch==1.10.0
+tqdm==4.64.1
+```
 ## 主要特征
 - 基于目前主流的深度学习框架pytorch，支持gpu加速。
 - 简洁易用，仅需寥寥几行代码，即可实现强化学习算法的构建与训练。
