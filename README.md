@@ -46,6 +46,7 @@ tqdm==4.64.1
 - 基于目前主流的深度学习框架pytorch，支持gpu加速。
 - 简洁易用，仅需寥寥几行代码，即可实现强化学习算法的构建与训练。
 - 覆盖面广，从传统的QLearning，到一些最新的强化学习算法都有实现。
+- 所有超参均支持自定义，同时可自定义深度神经网络的结构，封装程度低而又简介易用。
 ## 图解Life的结构
 ![life_struct](https://user-images.githubusercontent.com/106570281/221387421-566e1444-ea61-48ed-b68e-34ee1725560f.jpg)
 ## Life将强化学习算法分为以下几类：
@@ -107,6 +108,7 @@ class YourNet:
 agent = DQN(state_dim, hidden_dim, action_dim, lr, gamma, epsilon,
             target_update, device, q_net=YourNet)  # DQN模型
 ```
+此时，原本用于传递给默认神经网络的超参数state_dim,hidden_dim,action_dim就没有用了，可随意设置。
 ## 第三步，使用训练器训练模型
 ```python
 result=train_dqn(agent,env,replay_buffer,minimal_size,batch_size,num_episodes)
